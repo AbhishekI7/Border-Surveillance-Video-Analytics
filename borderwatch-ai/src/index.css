@@ -1,0 +1,73 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, "SFMono-Regular", monospace;
+
+  --color-base: #0a0d11;
+  --color-base-raised: #10141a;
+  --color-panel: #12171d;
+  --color-panel-hover: #171d24;
+  --color-line: #232a32;
+  --color-line-soft: #1a2028;
+
+  --color-ink: #e7edf1;
+  --color-ink-dim: #93a2ad;
+  --color-ink-faint: #5c6b76;
+
+  --color-signal: #e7a13a;
+  --color-signal-dim: #7a5a26;
+  --color-active: #34d38c;
+  --color-active-dim: #1f5c40;
+  --color-danger: #e5484d;
+  --color-danger-dim: #6e2a2c;
+  --color-vehicle: #4fa3e0;
+}
+
+html {
+  color-scheme: dark;
+}
+
+body {
+  background-color: var(--color-base);
+  color: var(--color-ink);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+}
+
+/* subtle scanline texture used on camera placeholders */
+.scanlines {
+  background-image: repeating-linear-gradient(
+    to bottom,
+    rgba(255, 255, 255, 0.035) 0px,
+    rgba(255, 255, 255, 0.035) 1px,
+    transparent 1px,
+    transparent 3px
+  );
+}
+
+.grid-fade {
+  background-image:
+    linear-gradient(to right, rgba(231, 237, 241, 0.05) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(231, 237, 241, 0.05) 1px, transparent 1px);
+  background-size: 28px 28px;
+}
+
+::selection {
+  background-color: var(--color-signal);
+  color: #14110a;
+}
+
+/* thin scrollbars for the tactical feel */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background-color: var(--color-line);
+  border-radius: 4px;
+}

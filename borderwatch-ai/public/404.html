@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>BorderWatch AI</title>
+    <!--
+      Single Page Apps for GitHub Pages
+      https://github.com/rafgraph/spa-github-pages
+
+      GitHub Pages has no server-side rewrite support, so a direct link or a
+      refresh on a route like /cameras returns a 404. GitHub Pages serves this
+      404.html file instead, and this script redirects back to index.html
+      with the intended path encoded in the query string. index.html then
+      decodes it and hands off to React Router.
+    -->
+    <script type="text/javascript">
+      var pathSegmentsToKeep = 1; // keep "/Border-Surveillance-Video-Analytics"
+
+      var l = window.location;
+      l.replace(
+        l.protocol + "//" + l.hostname + (l.port ? ":" + l.port : "") +
+        l.pathname.split("/").slice(0, 1 + pathSegmentsToKeep).join("/") + "/?/" +
+        l.pathname.slice(1).split("/").slice(pathSegmentsToKeep).join("/").replace(/&/g, "~and~") +
+        (l.search ? "&" + l.search.slice(1).replace(/&/g, "~and~") : "") +
+        l.hash
+      );
+    </script>
+  </head>
+  <body></body>
+</html>
